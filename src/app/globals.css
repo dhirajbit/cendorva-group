@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #192d42;
+  --color-navy-2: #253d57;
+  --color-steel: #4d758e;
+  --color-canvas: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-ink: #202b36;
+  --color-slate: #637181;
+  --color-line: #e2e7ec;
+  --color-line-dark: #2f4860;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 2px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-steel);
+  color: #fff;
+}
+
+/* Display type: Manrope, tight tracking, used on every heading level */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Shared focus treatment so keyboard users always see where they are */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-steel);
+  outline-offset: 3px;
+}
+
+.on-navy :where(a, button, input, select, textarea):focus-visible {
+  outline-color: #fff;
+}
