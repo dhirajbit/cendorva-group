@@ -48,6 +48,9 @@ time, so change them and rebuild.
 - `src/components/Logo.tsx`: wordmark and C-monogram as React components (dark and light tones)
 - `src/app/icon.svg`: favicon (navy tile with the monogram)
 - `public/logo.svg`, `public/logo-white.svg`: standalone logo files
+- `brand/linkedin/`: LinkedIn company logo (300x300, 600x600) and cover photo
+  (1128x191, 2256x382) as PNGs, with the HTML templates and `generate.mjs`
+  that render them
 
 Content for capabilities, industries, process steps, and principles lives in
 `src/lib/content.ts`.
