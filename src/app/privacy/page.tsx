@@ -5,7 +5,7 @@ import { PageHero } from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Cendorva Group handles information submitted through this website.",
-  alternates: { canonical: "/privacy" },
+  alternates: { canonical: "/privacy/" },
   robots: { index: false, follow: true },
 };
 

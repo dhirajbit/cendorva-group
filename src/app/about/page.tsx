@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Cendorva Group is an independent technology and enterprise solutions firm that connects strategy with practical execution for organizations facing complex decisions.",
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "/about/" },
 };
 
 const operating = [

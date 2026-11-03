@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Industries",
   description:
     "Cendorva Group supports organizations in financial services, healthcare and life sciences, manufacturing, logistics, technology, and professional services with technology and strategic advisory.",
-  alternates: { canonical: "/industries" },
+  alternates: { canonical: "/industries/" },
 };
 
 const icons = {

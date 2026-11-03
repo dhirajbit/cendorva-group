@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/privacy", "yearly", 0.2],
   ];
   return routes.map(([path, changeFrequency, priority]) => ({
-    url: `${site.url}${path}`,
+    url: `${site.url}${path === "/" ? "" : path}/`,
     lastModified,
     changeFrequency,
     priority,

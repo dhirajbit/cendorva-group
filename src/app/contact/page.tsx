@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Start a conversation with Cendorva Group about a technology decision, enterprise solution, project, or strategic initiative.",
-  alternates: { canonical: "/contact" },
+  alternates: { canonical: "/contact/" },
 };
 
 const expectations = [
