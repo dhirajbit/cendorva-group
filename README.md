@@ -3,8 +3,8 @@
 Corporate website for Cendorva Group, an independent technology consulting,
 enterprise solutions, strategic advisory, and project development firm.
 
-Stack: Next.js (App Router), TypeScript, Tailwind CSS v4, lucide-react,
-Motion, Resend.
+Stack: Next.js (App Router, static export), TypeScript, Tailwind CSS v4,
+lucide-react, Motion.
 
 ## Run locally
 
@@ -25,7 +25,7 @@ Open http://localhost:3000.
 | `/capabilities` | The four service areas in detail                          |
 | `/industries`   | Six target industries and the challenges addressed        |
 | `/approach`     | The four-stage engagement method                          |
-| `/contact`      | Contact form (delivered by email through Resend)          |
+| `/contact`      | Contact form (posts to a configurable form endpoint)      |
 | `/privacy`      | Privacy policy                                            |
 
 `/sitemap.xml` and `/robots.txt` are generated from `src/app/sitemap.ts`
@@ -33,21 +33,15 @@ and `src/app/robots.ts`.
 
 ## Contact form
 
-Submissions post to `/api/contact`, which validates the payload and sends an
-email through [Resend](https://resend.com). Three environment variables are
-required:
-
-| Variable             | Purpose                                                   |
-| -------------------- | --------------------------------------------------------- |
-| `RESEND_API_KEY`     | API key from the Resend dashboard                         |
-| `CONTACT_TO_EMAIL`   | Inbox that receives enquiries (comma-separate for several) |
-| `CONTACT_FROM_EMAIL` | Verified sender, e.g. `Cendorva Group <website@domain>`   |
-
-If any are missing the API returns 503 and the form shows an error. It never
-reports a fake success.
+The site is a fully static export (`output: "export"`), so there is no server
+to send email. The form validates client-side and posts JSON to whatever
+endpoint `NEXT_PUBLIC_CONTACT_ENDPOINT` points at (Formspree, Basin, Getform,
+or any service that accepts a JSON POST). If that variable is empty, the form
+shows an honest "not connected to an inbox yet" error. It never fakes success.
 
 Set `NEXT_PUBLIC_SITE_URL` to the public origin so the sitemap, robots file,
-and Open Graph metadata use absolute URLs.
+and Open Graph metadata use absolute URLs. Both variables are read at build
+time, so change them and rebuild.
 
 ## Brand assets
 
@@ -60,5 +54,7 @@ Content for capabilities, industries, process steps, and principles lives in
 
 ## Deploy
 
-`render.yaml` defines a Render web service. Create a Blueprint from the repo
-and set the environment variables marked `sync: false` in the dashboard.
+`npm run build` writes the whole site to `out/`. Any static host works.
+`render.yaml` defines a Render Static Site that builds from the repo and
+publishes `out`; set the environment variables marked `sync: false` in the
+dashboard.

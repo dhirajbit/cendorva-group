@@ -28,6 +28,9 @@ function validate(f: Fields) {
   return e;
 }
 
+// A JSON-accepting form endpoint (Formspree, Basin, Getform, ...). Read at build time.
+const endpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT?.trim() || "";
+
 const inputClass =
   "w-full rounded-sm border bg-surface px-4 py-3 text-[15px] text-ink placeholder:text-slate/60 transition-colors focus:border-steel";
 
@@ -64,27 +67,40 @@ export function ContactForm() {
     setServerMessage("");
     const form = e.currentTarget;
     const honeypot = (form.elements.namedItem("website") as HTMLInputElement | null)?.value ?? "";
+    if (honeypot) {
+      setStatus("success");
+      return;
+    }
+
+    if (!endpoint) {
+      setServerMessage(
+        "The contact form isn't connected to an inbox yet, so your message was not sent. Please try again later.",
+      );
+      setStatus("error");
+      return;
+    }
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...fields, website: honeypot }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: fields.name.trim(),
+          email: fields.email.trim(),
+          company: fields.company.trim(),
+          interest: fields.interest,
+          message: fields.message.trim(),
+          _subject: `Website enquiry: ${fields.interest} from ${fields.company.trim()}`,
+        }),
       });
-      const data = (await res.json().catch(() => ({}))) as {
-        ok?: boolean;
-        error?: string;
-        fields?: Partial<Record<keyof Fields, string>>;
-      };
-      if (res.ok && data.ok) {
+      if (res.ok) {
         setStatus("success");
         setFields(empty);
         setTouched({});
         setErrors({});
         return;
       }
-      if (data.fields) setErrors(data.fields);
-      setServerMessage(data.error ?? "Your message could not be sent. Please try again.");
+      setServerMessage("Your message could not be sent right now. Please try again in a few minutes.");
       setStatus("error");
     } catch {
       setServerMessage("We couldn't reach the server. Check your connection and try again.");

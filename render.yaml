@@ -1,19 +1,17 @@
 services:
   - type: web
     name: cendorva-group
-    runtime: node
-    plan: starter
+    runtime: static
     buildCommand: npm ci && npm run build
-    startCommand: npm run start
-    healthCheckPath: /
+    staticPublishPath: out
     envVars:
       - key: NODE_VERSION
         value: "22"
       - key: NEXT_PUBLIC_SITE_URL
         sync: false
-      - key: RESEND_API_KEY
+      - key: NEXT_PUBLIC_CONTACT_ENDPOINT
         sync: false
-      - key: CONTACT_TO_EMAIL
-        sync: false
-      - key: CONTACT_FROM_EMAIL
-        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /404.html
