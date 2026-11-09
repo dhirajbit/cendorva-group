@@ -1,7 +1,8 @@
 // Renders the LinkedIn assets from the HTML templates in this folder.
 // Usage: node brand/linkedin/generate.mjs
 // Needs Playwright with Chromium: `npm i -D playwright && npx playwright install chromium`,
-// or set PLAYWRIGHT_PATH to an existing playwright package.
+// or set PLAYWRIGHT_PATH to an existing playwright(-core) entry file and
+// PLAYWRIGHT_CHANNEL=chrome to use an installed Google Chrome.
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 const pw = process.env.PLAYWRIGHT_PATH ?? "playwright";
@@ -13,7 +14,8 @@ const jobs = [
   { file: "cover.html", sel: ".cover", w: 1128, h: 191, name: "linkedin-cover" },
 ];
 
-const browser = await chromium.launch();
+// Set PLAYWRIGHT_CHANNEL=chrome to drive an installed Google Chrome instead of the bundled Chromium.
+const browser = await chromium.launch(process.env.PLAYWRIGHT_CHANNEL ? { channel: process.env.PLAYWRIGHT_CHANNEL } : {});
 for (const job of jobs) {
   for (const scale of [1, 2]) {
     const ctx = await browser.newContext({ viewport: { width: job.w, height: job.h }, deviceScaleFactor: scale });

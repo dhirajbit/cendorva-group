@@ -67,7 +67,7 @@ export function HomeHero() {
                   transition: { duration: 1.4, delay: 0.3, ease },
                 })}
           >
-            <HeroGraphic className="mx-auto w-full max-w-[520px] lg:absolute lg:left-0 lg:top-1/2 lg:max-w-none lg:w-[640px] lg:-translate-y-1/2" />
+            <HeroGraphic className="mx-auto w-full max-w-[520px] lg:absolute lg:right-0 lg:top-1/2 lg:w-[calc(100%+120px)] lg:max-w-[640px] lg:-translate-y-1/2" />
           </motion.div>
         </div>
       </Container>

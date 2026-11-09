@@ -11,7 +11,7 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 py-16 md:grid-cols-12 md:gap-8 lg:py-20">
           <div className="md:col-span-5">
-            <Link href="/" aria-label="Cendorva Group, home" className="inline-block rounded-sm">
+            <Link href="/" aria-label="Cendova Group, home" className="inline-block rounded-sm">
               <Wordmark tone="light" />
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/70">
@@ -59,7 +59,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-4 border-t border-white/15 py-7 text-[13px] text-white/55 md:flex-row md:items-center md:justify-between">
           <p>
-            &copy; <Year /> Cendorva Group. All rights reserved.
+            &copy; <Year /> Cendova Group. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="transition-colors hover:text-white">

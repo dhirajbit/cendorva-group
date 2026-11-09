@@ -11,7 +11,7 @@ import { capabilities, principles } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Cendorva Group is an independent technology and enterprise solutions firm that connects strategy with practical execution for organizations facing complex decisions.",
+    "Cendova Group is an independent technology and enterprise solutions firm that connects strategy with practical execution for organizations facing complex decisions.",
   alternates: { canonical: "/about/" },
 };
 
@@ -38,9 +38,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Cendorva Group"
+        eyebrow="About Cendova Group"
         title="Independent Perspective. Integrated Expertise."
-        lede="Cendorva Group helps organizations connect strategy with practical execution. We combine technology advisory, enterprise solutions, project development, and strategic consulting so that decisions, designs, and delivery are handled as one piece of work rather than three."
+        lede="Cendova Group helps organizations connect strategy with practical execution. We combine technology advisory, enterprise solutions, project development, and strategic consulting so that decisions, designs, and delivery are handled as one piece of work rather than three."
       />
 
       {/* Philosophy */}
@@ -59,7 +59,7 @@ export default function AboutPage() {
                 erodes.
               </p>
               <p>
-                Cendorva Group was established to work in that gap. We take on
+                Cendova Group was established to work in that gap. We take on
                 the questions that sit between leadership intent and technical
                 reality: whether an investment is worth making, how a platform
                 should be structured, how a program should be sequenced, and
@@ -152,7 +152,7 @@ export default function AboutPage() {
 
       <CTA
         title="Talk With Us About What You're Working On."
-        body="An initial conversation is the fastest way to find out whether and how Cendorva Group can help."
+        body="An initial conversation is the fastest way to find out whether and how Cendova Group can help."
       />
     </>
   );

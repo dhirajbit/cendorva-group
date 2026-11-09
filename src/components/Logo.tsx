@@ -48,7 +48,7 @@ export function Wordmark({ tone = "dark" }: { tone?: Tone }) {
           className={`font-display text-[17px] font-bold tracking-[0.18em] ${primary}`}
           style={{ letterSpacing: "0.18em" }}
         >
-          CENDORVA
+          CENDOVA
         </span>
         <span
           className={`mt-1 text-[9px] font-medium ${secondary}`}
@@ -65,7 +65,7 @@ export function Logo({ tone = "dark" }: { tone?: Tone }) {
   return (
     <Link
       href="/"
-      aria-label="Cendorva Group, home"
+      aria-label="Cendova Group, home"
       className="inline-flex items-center rounded-sm"
     >
       <Wordmark tone={tone} />

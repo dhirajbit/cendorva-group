@@ -38,7 +38,7 @@ export default function Home() {
             </div>
             <div className="lg:col-span-5 lg:col-start-8">
               <p className="text-lg leading-relaxed text-slate">
-                Cendorva Group brings together strategic thinking, technical
+                Cendova Group brings together strategic thinking, technical
                 understanding, and structured project delivery to help
                 organizations address operational challenges and pursue new
                 opportunities.
@@ -52,7 +52,7 @@ export default function Home() {
                 href="/about"
                 className="mt-8 inline-flex items-center gap-2 text-[15px] font-medium text-navy hover:text-steel"
               >
-                About Cendorva Group
+                About Cendova Group
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </div>

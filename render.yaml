@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: cendorva-group
+    name: cendova-group
     runtime: static
     buildCommand: npm ci && npm run build
     staticPublishPath: out

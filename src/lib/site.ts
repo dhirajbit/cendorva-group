@@ -1,8 +1,8 @@
 export const site = {
-  name: "Cendorva Group",
+  name: "Cendova Group",
   tagline: "Technology. Strategy. Execution.",
   description:
-    "Cendorva Group is an independent technology and enterprise solutions firm helping organizations navigate complex technology decisions, develop enterprise solutions, and execute strategic initiatives.",
+    "Cendova Group is an independent technology and enterprise solutions firm helping organizations navigate complex technology decisions, develop enterprise solutions, and execute strategic initiatives.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 };
 

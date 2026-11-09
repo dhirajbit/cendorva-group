@@ -1,6 +1,6 @@
-# Cendorva Group website
+# Cendova Group website
 
-Corporate website for Cendorva Group, an independent technology consulting,
+Corporate website for Cendova Group, an independent technology consulting,
 enterprise solutions, strategic advisory, and project development firm.
 
 Stack: Next.js (App Router, static export), TypeScript, Tailwind CSS v4,

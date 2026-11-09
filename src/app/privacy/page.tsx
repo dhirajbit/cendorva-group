@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Cendorva Group handles information submitted through this website.",
+  description: "How Cendova Group handles information submitted through this website.",
   alternates: { canonical: "/privacy/" },
   robots: { index: false, follow: true },
 };
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <PageHero
         eyebrow="Legal"
         title="Privacy Policy"
-        lede="This page describes what information this website collects and how it is used. It applies to the Cendorva Group website only."
+        lede="This page describes what information this website collects and how it is used. It applies to the Cendova Group website only."
       />
       <section className="py-20 lg:py-28">
         <Container>

@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function CTA({
   title = "Let’s Move Your Next Initiative Forward.",
-  body = "Whether you’re evaluating a technology investment, planning a transformation, or developing a new project, Cendorva Group can help you explore the path forward.",
+  body = "Whether you’re evaluating a technology investment, planning a transformation, or developing a new project, Cendova Group can help you explore the path forward.",
   label = "Start a Conversation",
 }: {
   title?: string;

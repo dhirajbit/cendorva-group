@@ -11,7 +11,7 @@ import { capabilities } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Capabilities",
   description:
-    "Technology advisory, enterprise solutions, project development, and strategic consulting from Cendorva Group: what each covers, the challenges addressed, and what engagements deliver.",
+    "Technology advisory, enterprise solutions, project development, and strategic consulting from Cendova Group: what each covers, the challenges addressed, and what engagements deliver.",
   alternates: { canonical: "/capabilities/" },
 };
 

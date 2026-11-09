@@ -9,7 +9,7 @@ import { process } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Our Approach",
   description:
-    "Cendorva Group's four-stage engagement method: Discover, Assess, Design, and Deliver. How we move from understanding an organization to supporting execution.",
+    "Cendova Group's four-stage engagement method: Discover, Assess, Design, and Deliver. How we move from understanding an organization to supporting execution.",
   alternates: { canonical: "/approach/" },
 };
 
